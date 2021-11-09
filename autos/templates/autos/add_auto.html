@@ -1,0 +1,26 @@
+<form action="{% url 'auto:addauto' %}" method="post">
+    {% csrf_token %}
+    <p>
+        <label for="nickname">Nickname : </label>
+        <input type="text" name="nickname" id="nickname" value="{{ autodetails.nickname }}">
+    </p>
+    <p>
+        <label for="make">Make : </label>
+        <select name="make" id="make">
+            {% for item in make %}
+            <option value="{{ item.id }} ">{{ item }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>
+        <label for="milage">Milage : </label>
+        <input type="text" name="milage" id="milage" value="{{ autodetails.milage }}">
+    </p>
+    <p>
+        <label for="comments">Comments : </label>
+        <input type="textarea" name="comments" id="comments" value="{{ autodetails.comments }}">
+    </p>
+
+
+    <input type="submit" name = "buttonsubmit" value="Add">
+</form>

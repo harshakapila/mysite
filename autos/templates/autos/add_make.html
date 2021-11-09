@@ -1,0 +1,8 @@
+<form action="{% url 'auto:addmake' %}" method="post">
+    {% csrf_token %}
+    <p>
+        <label for = "make"> Make : </label>
+        <input type="text" name="make" id="make">
+    </p>
+    <input type="submit" name="buttonsubmit" value="Add">
+</form>

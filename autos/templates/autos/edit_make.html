@@ -1,0 +1,12 @@
+<form action="{% url 'auto:editmake' make.id %}" method="post">
+    {% csrf_token %}
+    <p>
+        <label for="make">Make : </label>
+        <input type="text" name="make" id="make" value="{{ make.name_text }}">
+    </p>
+
+    <input type="submit" name="buttonupdate" value="Update">
+    <input type="submit" name="buttondelete" formaction="{% url 'auto:makedelete' make.id %}" value="Delete">
+
+
+</form>

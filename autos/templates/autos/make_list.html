@@ -1,0 +1,17 @@
+
+<a href="./addmake">Add New Make </a>
+
+<h2>Make list </h2>
+
+
+<ul>
+    {% for make in makelist %}
+    <li>
+     
+        <a href="{% url 'auto:editmake' make.id %}"/>
+        {{ forloop.counter }} : 
+        {{  make.name_text }}
+    </li>
+
+    {% endfor %}
+</ul>
