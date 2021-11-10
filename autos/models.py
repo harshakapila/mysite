@@ -15,4 +15,5 @@ class Autos(models.Model):
     milage = models.IntegerField(default=0)
     comments = models.CharField(max_length=1000)
 
+
     

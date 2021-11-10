@@ -1,4 +1,3 @@
-
 <a href="./addauto">Add New Auto </a> <br>
 
 <h2>Auto list </h2>
@@ -7,10 +6,10 @@
 <ul>
     {% for auto in autolist %}
     <li>
-     
-        <a href="{% url 'auto:autoedit' auto.id %}"/>
-        {{ forloop.counter }} : 
-       {{ auto.nickname }} - {{ auto.make }} - {{ auto.milage }} - {{ auto.comments }}
+
+        <a href="{% url 'auto:autoedit' auto.id %}" />
+        {{ forloop.counter }} :
+        {{ auto.nickname }} - {{ auto.make }} - {{ auto.milage }} - {{ auto.comments }}
     </li>
 
     {% endfor %}

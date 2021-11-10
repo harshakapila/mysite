@@ -90,7 +90,8 @@ def addmake(request):
         obj.name_text = request.POST['make']
 
         obj.save()
-        return redirect ('autos/listmakes')
+        return redirect ('/autos/listmakes')
+        #return redirect('auto:makeslist')
     else:
         return render(request, 'autos/add_make.html', {})
 
@@ -116,7 +117,8 @@ def editmake(request, id):
         obj.name_text = request.POST['make']
         obj.save()
 
-        return redirect('autos/makelist')
+        return redirect('auto:makeslist')
+
     elif request.method == 'POST' and 'buttondelete' in request.POST:
         return redirect(str(id) + '/deletemake')
     else:
@@ -125,8 +127,6 @@ def editmake(request, id):
 
 
 
-
-
 def makedelete(request, id):
     Make.objects.filter(id=id).delete()
-    return redirect('autos/listmakes')
+    return redirect('auto:makeslist')

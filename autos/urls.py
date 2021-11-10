@@ -13,7 +13,6 @@ urlpatterns = [
 
     path('listmakes/', views.makeslist, name='makeslist'),
     path('addmake/', views.addmake, name='addmake'),
-
     path('<int:id>/editmake', views.editmake, name='editmake'),
     path('<int:id>/deletemake', views.makedelete, name='makedelete'),
 
