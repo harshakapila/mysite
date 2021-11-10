@@ -1,14 +1,8 @@
-<ul>
-    <li>
-        <p><a href="/polls">A Polls Application</a></p>
-    </li>
-    <li>
-        <p><a href="/hello">Test the session</a></p>
-    </li>
-    <li>
-        <p><a href="/autos">AUTOs CRURD</a></p>
-    </li>
+{% extends "base_bootstrap.html" %}
+{% block content %}
 
-
-
-</ul>
+<h1>Welcome to {{ settings.APP_NAME }}</h1>
+<p>
+    Hello World.
+</p>
+{% endblock content %}
