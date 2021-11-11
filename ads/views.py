@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic import ListView
@@ -13,17 +13,18 @@ def adshomeview(request):
 
 class AdListView(ListView):
     ad = Ad
-
+    template_name = 'ads/ad_list.html'
+    
     def get_queryset(self):
-        return models.Ad.objects.order_by('id')
+      ads= models.Ad.objects.order_by('id')
+      
+      context = {
+          'ad':'ads',
+      }
+      return context
 
 
-    def head (self, *args, **kwards):
-        last_add = self.get_queryset().latest('created_at')
-        response = HttpResponse (
-                    headers = {'Last created': last_add.created_at.strftime('%a, %d %b %Y %H:%M:%S GMT')}
-        )
-        return response
+
 
 def ad_create(request):
-    pass
+    return render(request, 'ads/ad_create.html')

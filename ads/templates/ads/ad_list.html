@@ -1,1 +1,11 @@
 {% extends "base_menu.html" %}
+
+{% block content %}
+<h1>Ads List</h1>
+
+{% for item in ads %}
+{{ item.title }}
+{% endfor %}
+
+
+{% endblock %}
