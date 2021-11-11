@@ -6,6 +6,6 @@ app_name ='ads'
 
 urlpatterns = [
     path('', views.adshomeview, name='adshomeview'),
-    path('', views.AdListView.as_view(), name='all'),
-    path('', views.ad_create, name='ad_create'),
+    path('all/', views.AdListView.as_view(), name='all'),
+    path('ad_create/', views.ad_create, name='ad_create'),
 ]

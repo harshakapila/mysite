@@ -170,8 +170,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/' 
+LOGIN_REDIRECT_URL = '/' 
+
 
 # Don't set default LOGIN_URL - let django.contrib.auth set it when it is loaded
 # LOGIN_URL = '/accounts/login'
