@@ -7,7 +7,7 @@ from django.views.generic import ListView
 from ads import models
 from ads.forms import AdForm
 from django.contrib import messages
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 
 
@@ -75,7 +75,6 @@ def ad_delete(request, id):
 def ad_edit(request, id):
     addetail = Ad.objects.get(id=id)
 
-    User = get_user_model()
     users = User.objects.all()
     
    
