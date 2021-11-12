@@ -11,6 +11,8 @@ from django.contrib.auth import get_user_model
 
 
 
+
+
 from ads.models import Ad
 
 # Create your views here.
@@ -29,7 +31,9 @@ class AdListView(ListView):
     template_name = 'ads/ad_list.html'
     
     def get(self, request, *args, **kwargs):
-      ads= models.Ad.objects.order_by('id')
+        
+    
+      ads = models.Ad.objects.filter(owner = request.user.id)
       
       context = {
           'ads':ads,
@@ -45,6 +49,7 @@ def ad_create(request):
 
     if request.method == 'POST':
         ad_form = AdForm(request.POST, request.FILES)
+
         if ad_form.is_valid():
             ad_form.save()
             messages.success(request, ("Your Ad was created sucessfully"))

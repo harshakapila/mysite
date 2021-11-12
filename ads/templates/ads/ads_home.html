@@ -32,14 +32,18 @@
                         class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-pencil"></span> Edit
                     </button>
+                </form>
             </td>
             <td>
-
+                <form method="post" onsubmit="window.confirmdelete()">
+                    {% csrf_token %}
                     <button type="submit" name="buttondelete" formaction="{% url 'ads:ad_delete' item.id %}"
                         class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-trash"></span> Del
                     </button>
                 </form>
+                <script type="text/javascript">window.confirmdelete = function() { var isValid = confirm('Are you sure ?');if (!isValid) { event.preventDefault();  alert("It wont delete. Yay!");}}</script>
+
             </td>
         </tr>
         {% endfor %}
