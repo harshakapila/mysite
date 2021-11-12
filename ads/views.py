@@ -85,15 +85,15 @@ def ad_edit(request, id):
         obj.title = request.POST.get('title')
         obj.price = request.POST.get('price')
         obj.text = request.POST.get('text')
-        ownername = request.POST.get('owner')
-        print(request.POST.get('owner'))
+       
+    
+        owner = User.objects.get(username = request.POST.get('owner'))
 
-        owner = get_object_or_404(User, username = ownername)
 
         obj.owner = owner
         obj.save()
 
-        return redirect('/ads/all')
+        return redirect('/all')
     else:
         return render (request, 'ads/ad_edit.html', context)
     
