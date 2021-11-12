@@ -3,5 +3,13 @@
 {% block content %}
 
 <h2>Ads Create </h2>
+{% load crispy_forms_tags %}  
+
+<form method="POST">
+    {% csrf_token %}
+    {{ ad_form |crispy}}
+    <button class=" btn btn-primary my-4" type="submit">Submit</button>
+</form>
+
 
 {% endblock %}
